@@ -1,0 +1,149 @@
+@import "susy";
+
+/* Template stylesheets */
+@import "../bower_components/normalize-css/normalize.css";
+@import "../bower_components/animate.css/animate.css";
+
+/* Fonts */
+@import "http://fonts.googleapis.com/css?family=Fira+Sans";
+@import "http://fonts.googleapis.com/css?family=Lobster";
+@import "http://fonts.googleapis.com/css?family=Merriweather";
+
+/*---------------------
+  Variables
+---------------------*/
+
+$med-gray: #222;
+$light-gray: #4F4F4F;
+$lightest-gray: #969696;
+$white: #fff;
+
+$brown: #FCB232;
+$blue: #66CCFF;
+$pink: #FF6BFD;
+
+$large-font-size: 3.8em;
+$medium-font-size: 1.35em;
+$regular-font-size: 1em;
+
+$std-line-height: 1.15;
+
+/*---------------------
+  Mixins
+---------------------*/
+
+@mixin transition($time) {
+  transition: $time;
+  -o-transition: $time;
+  -ms-transition: $time;
+  -moz-transition: $time;
+  -webkit-transition: $time;
+}
+
+@mixin font-face-standard {
+  font-family: 'Fira Sans', sans-serif;
+}
+@mixin font-face-fancy {
+  font-family: 'Lobster', cursive;
+}
+@mixin font-face-serif {
+  font-family: 'Merriweather', serif;
+}
+
+html {
+  height: 100%;
+  color: $med-gray;
+  @include font-face-standard;
+  font-size: $regular-font-size;
+  line-height: $std-line-height;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  height: 100%;
+  margin: 0 auto;
+  display: table; /* Vertical align */
+  background-color: $med-gray;
+}
+
+#container {
+  height: 100%;
+  padding: 0 24px;
+  display: table-cell; /* Vertical align */
+  vertical-align: middle;
+}
+
+/*---------------------
+  Typography
+---------------------*/
+
+.title {
+  margin: 0 0 35px;
+  color: $white;
+  @include font-face-fancy;
+  font-size: $large-font-size;
+  line-height: $std-line-height;
+  font-weight: 400;
+}
+
+.sub-title {
+  margin: 0 0 50px;
+  color: $light-gray;
+  text-transform: uppercase;
+  font-size: $medium-font-size;
+  line-height: $std-line-height;
+  font-weight: 800;
+}
+
+/*---------------------
+  Social Links
+---------------------*/
+
+#social-links {
+  margin: 0;
+  padding: 0;
+  li {
+    margin-right: 20px;
+    display: inline;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      padding-bottom: 2px;
+      display: inline-block;
+      color: $lightest-gray;
+      border-bottom: 3px solid $light-gray;
+      font-weight: 400;
+      @include font-face-serif;
+      text-decoration: none;
+      @include transition(.3s);
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+#social-links li a.instagram:hover {
+  border-color: $brown;
+}
+
+#social-links li a.github:hover {
+  border-color: $pink;
+}
+
+#social-links li a.email:hover {
+  border-color: $blue;
+}
+
+/*---------------------
+  Helpers
+---------------------*/
+
+.visible {
+  visibility: visible !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
