@@ -1,3 +1,3 @@
 ABOUT
 -----
-My portfolio website [richardddesigns.com](http://www.richardddesigns.com/)
+My portfolio website [richardddesigns.com](http://richardddesigns.com)
